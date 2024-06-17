@@ -9,7 +9,6 @@ export default function Home () {
             <Banner />
             <div className="border-[.5px] border-amber-700 border-solid w-4/5 ml-[10%] my-10"></div>
             <About />
-            <h1 className="text-xl">HOME</h1>
         </main>
     );
 }
