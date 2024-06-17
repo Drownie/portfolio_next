@@ -41,7 +41,7 @@ export default function Navbar() {
     return (
         <nav className="shadow-sm shadow-orange-800">
             <div className="w-full h-16 flex justify-between">
-                <div className="flex items-center xl:bg-red-500 xl:w-[60%] lg:w-[50%] md:w-[40%] sm:w-[30%] w-[30%]">
+                <div className="flex items-center xl:w-[60%] lg:w-[50%] md:w-[40%] sm:w-[30%] w-[30%]">
                     <button className="font-sans md:text-base sm:text-sm text-xs text-amber-50 bg-amber-700 py-1.5 px-2.5 rounded-md xl:ml-32 lg:ml-24 md:ml-16 sm:ml-8 ml-8">Download My CV</button>
                 </div>
                 <RenderNavButton/>
