@@ -32,7 +32,8 @@ const Projects = () => {
           "Expo",
           "Visual Impairment"
         ] 
-      }, { 
+      }, 
+      { 
         id: 2, 
         title: 'Finger Control Ping-Pong Game', 
         short_description: 'A fun and interactive ping-pong game controlled by finger movements detected using OpenCV. This game maps real-world finger coordinates to control the paddle, offering a unique and engaging gaming experience.', 
@@ -56,10 +57,10 @@ const Projects = () => {
         <div key={project.id} className="relative min-w-[200px] w-[200px] h-[260px] bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 mr-5">
             <div className="flex flex-col p-5 justify-between w-full h-full">
                 <Link href={project.redirect_url} target='_blank' className='h-[30%]'>
-                    <h5 className="md:text-xl sm:text-base text-sm font-bold tracking-tight text-gray-900 dark:text-white m-0">{project.title}</h5>
+                    <h5 className="md:text-xl sm:text-base text-sm font-bold tracking-tight text-amber-900 dark:text-white m-0">{project.title}</h5>
                 </Link>
                 <p className="h-[40%] font-normal text-sm text-gray-700 dark:text-gray-400 overflow-x-hidden overflow-y-scroll">{project.short_description}</p>
-                <Link href={project.redirect_url} target='_blank' className="h-[15%] inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                <Link href={project.redirect_url} target='_blank' className="h-[15%] inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-amber-700 rounded-lg hover:bg-amber-900 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                     See Project
                     <svg className="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
@@ -80,6 +81,17 @@ const Projects = () => {
                 projects.map((project: projectSchema) => {
                     return renderProjectCard(project);
                 })
+            }
+            {
+              projects.length > 0 &&
+              <Link href="https://github.com/Drownie?tab=repositories" target='_blank' className="relative flex flex-col min-w-[120px] w-[120px] h-[260px] justify-center item-center bg-amber-700 text-white hover:bg-amber-900 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 px-2">
+                <p className="font-bold text-xl">More Projects</p>
+                <div className="flex w-full py-1">
+                  <svg className="rtl:rotate-180 w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                  </svg>
+                </div>
+              </Link>
             }
         </div>
     </div>
