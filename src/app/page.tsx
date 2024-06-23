@@ -2,6 +2,7 @@ import Navbar from "@/components/navbar";
 import Banner from "@/components/banner";
 import About from "@/components/about";
 import Footer from "@/components/footer";
+import Projects from "@/components/projects";
 
 export default function Home () {
     return (
@@ -10,6 +11,7 @@ export default function Home () {
             <Banner />
             <div className="border-[.5px] border-amber-700 border-solid w-4/5 ml-[10%] my-10"></div>
             <About />
+            <Projects />
             <Footer />
         </main>
     );
