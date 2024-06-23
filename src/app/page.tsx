@@ -3,6 +3,7 @@ import Banner from "@/components/banner";
 import About from "@/components/about";
 import Footer from "@/components/footer";
 import Projects from "@/components/projects";
+import ScrollToTop from "@/components/scroll_to_top";
 
 export default function Home () {
     return (
@@ -13,6 +14,7 @@ export default function Home () {
             <About />
             <Projects />
             <Footer />
+            <ScrollToTop />
         </main>
     );
 }
