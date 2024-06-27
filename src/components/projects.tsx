@@ -23,14 +23,8 @@ const Projects = () => {
         redirect_url: "https://github.com/Drownie/image-to-speech-app", 
         tags: [
           "React Native",
-          "Accessibility",
-          "Text to Speech",
           "OCR",
-          "Voice Commands",
-          "Mobile Development",
-          "Assistive Technology",
-          "Expo",
-          "Visual Impairment"
+          "Mobile Development"
         ] 
       }, 
       { 
@@ -40,13 +34,19 @@ const Projects = () => {
         redirect_url: "https://github.com/Drownie/Finger-Control-Ping-Pong", 
         tags: [
           "OpenCV",
-          "Computer Vision",
           "Python",
-          "Pygame",
-          "Game Development",
-          "Interactive Games",
-          "Gesture Control",
-          "Real-Time Processing"
+          "Game Development"
+        ] 
+      },
+      { 
+        id: 3, 
+        title: 'Web Scraping Portfolio', 
+        short_description: 'This is a web scraping portfolio that presents the raw results of data extraction in JSON format. This project highlights the effectiveness of web scraping techniques in gathering structured data from various sources on the web. Ideal for data enthusiasts and developers, this portfolio demonstrates the capability to automate data collection and provides a clear, organized presentation of the extracted information in JSON files.', 
+        redirect_url: "https://github.com/Drownie/Web-Scraping-Portfolio", 
+        tags: [
+          "Selenium",
+          "Python",
+          "Web Scraping"
         ] 
       }
     ]);
