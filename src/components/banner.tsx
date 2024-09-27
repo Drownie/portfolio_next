@@ -9,7 +9,14 @@ export default function Banner() {
             </div>
             <div className="flex justify-center items-center md:w-2/4 w-full">
                 <div className="relative md:h-96 h-56 md:w-96 w-56 rounded-full overflow-hidden">
-                    <Image src="/images/banner.jpeg" fill alt="Banner image"/>
+                    <Image 
+                        src="/images/banner.jpeg" 
+                        fill 
+                        alt="Banner image"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        style={{ objectFit: 'cover' }}
+                        priority
+                    />
                 </div>
             </div>
         </div>
