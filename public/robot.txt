@@ -1,4 +1,5 @@
 User-agent: *
-Disallow:
-
-Sitemap: https://drownie.xyz/sitemap.xml
+Sitemap: https://drownie.net/sitemap.xml
+Disallow: /_next/
+Disallow: /static/
+Disallow: /favicon.ico
