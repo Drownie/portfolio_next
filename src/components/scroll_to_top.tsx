@@ -33,7 +33,7 @@ export default function ScrollToTop() {
       {showScroll && (
         <button
           onClick={scrollToTop}
-          className={`fixed bottom-7 right-7 z-50 bg-amber-700 text-white px-2 py-2 rounded-full hover:bg-amber-500 transition-opacity duration-300 ease-in-out ${showScroll ? "opacity-100" : "opacity-0"}`}
+          className={`fixed bottom-7 right-7 z-50 bg-amber-700 text-white px-2 py-2 rounded-full hover:bg-orange-100 hover:text-amber-700 transition-opacity duration-300 ease-in-out ${showScroll ? "opacity-100" : "opacity-0"}`}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

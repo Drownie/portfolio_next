@@ -1,12 +1,36 @@
+"use client"
+
+import { useContext } from "react";
+import { GlobalContext } from "@/context/global_context";
+
 export default function About() {
+    const { aboutText, techStackList } = useContext(GlobalContext);
+
     return (
-        <div id="about" className="flex min-h-96 justify-center flex-wrap-reverse">
-            <div className="flex flex-col justify-center items-center md:w-[40%] w-full px-10 md:mb-10 mb-20 md:mt-0 mt-6">
-            <p className="mb-2 text-justify">Full Stack Developer with over 1 year of experience in designing, developing, and deploying web and mobile applications. Proven track record in building scalable projects, including a notable application. Adept at both front-end and back-end development, ensuring seamless integration and robust functionality across the technology stack. Committed to delivering high-quality code and exceptional user experiences.</p>
+        <>
+            {/* About Text */}
+            <div id="about" className="flex min-h-48 md:flex-row flex-col justify-center items-center text-white gap-3 py-3 px-14">
+                <span className="text-4xl font-sans font-semibold text-amber-700 align-middle md:text-left text-center md:w-fit md:min-w-44 w-full">
+                    <span className="underline" >About</span> Me
+                </span>
+                <span className="w-full text-justify font-medium">
+                    {aboutText}
+                </span>
             </div>
-            <div className="flex justify-center items-center md:w-[40%] w-full md:mb-10">
-                <h3 className="text-4xl font-sans font-medium text-center text-amber-700">Abo<span className="underline">ut</span> me</h3>
+
+            {/* Tech Stack */}
+            <div id="about" className="flex flex-col justify-center items-center text-white gap-3 py-3 px-14">
+                <span className="text-4xl font-sans font-semibold text-amber-700 align-middle text-center w-full">
+                Tech <span className="underline">Stacks</span>
+                </span>
+                <span className="flex justify-center flex-wrap gap-5 border-4 rounded-xl py-3 px-5 w-1/2 border-amber-700">
+                    {techStackList.map((techStackItem, i) => (
+                        <span className="flex text-[4.5rem]" key={i}>
+                            {techStackItem.icon}
+                        </span>
+                    ))}
+                </span>
             </div>
-        </div>
+        </>
     );
 }

@@ -74,9 +74,9 @@ const Projects = () => {
   return (
     <div id="projects" className='py-5'>
         <div className="flex justify-center items-center w-full md:mb-10">
-            <h3 className="text-4xl font-sans font-medium text-center text-amber-700 underline">My Projects</h3>
+            <h3 className="text-4xl font-sans font-semibold text-center text-amber-700 underline">Projects</h3>
         </div>
-        <div className="flex items-center overflow-y-hidden overflow-x-auto min-w-full h-[30rem] px-10 py-5"> 
+        <div className="flex items-center overflow-y-hidden overflow-x-auto min-w-full h-fit px-10 py-5"> 
             {
                 projects.map((project: projectSchema) => {
                     return renderProjectCard(project);
@@ -84,7 +84,7 @@ const Projects = () => {
             }
             {
               projects.length > 0 &&
-              <Link href="https://github.com/Drownie?tab=repositories" target='_blank' className="relative flex flex-col min-w-[120px] w-[120px] h-[260px] justify-center item-center bg-amber-700 text-white hover:bg-amber-900 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 px-2">
+              <Link href="https://github.com/Drownie?tab=repositories" target='_blank' className="relative flex flex-col min-w-[120px] w-[120px] h-[260px] justify-center item-center bg-amber-700 text-white hover:bg-amber-900 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 px-2">
                 <p className="font-bold text-xl">More Projects</p>
                 <div className="flex w-full py-1">
                   <svg className="rtl:rotate-180 w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">

@@ -1,53 +1,47 @@
 "use client"
 
+import { useContext } from "react";
 import Link from "next/link";
+import Image from "next/image";
+import { FaExternalLinkAlt } from 'react-icons/fa';
 
-const menuItems = [
-    {
-        title: 'About',
-        path: '#about'
-    },
-    {
-        title: 'Projects',
-        path: '#projects'
-    },
-    {
-        title: 'Contact',
-        path: '#contact'
-    },
-];
+import { GlobalContext } from "@/context/global_context";
 
 export default function Navbar() {
-    const RenderNavButton = () => {
-        return (
-            <div className="flex xl:w-[20%] lg:w-[25%] md:w-[30%] sm:w-[35%] w-[45%] mr-10 justify-around items-center">
-                {menuItems.map((menuItem, index) => {
-                    return <Link className="font-sans hover:text-amber-700" key={index} href={menuItem.path} scroll={true}>{menuItem.title}</Link>;
-                })}
-            </div>
-        );
-    }
-
-    function toggleNavbar(navbarId: string): void {
-        console.log(navbarId)
-        return
-    }
-
-    function openDropdown(dropdownId: string): void {
-        console.log(dropdownId)
-        return
-    }
+    const { navbarList, cvUrl } = useContext(GlobalContext);
 
     return (
-        <nav className="shadow-sm shadow-orange-800">
-            <div className="w-full h-16 flex justify-between">
-                <div className="flex items-center xl:w-[60%] lg:w-[50%] md:w-[40%] sm:w-[30%] w-[30%]">
-                    <a href="https://docs.google.com/document/d/1194g2Z5seC2iLJiD6dTDq1EpJX2AREBbD-u-70A8RHw/edit?usp=sharing" target="__blank" className="font-sans md:text-base sm:text-sm text-xs text-amber-50 bg-amber-700 py-1.5 px-2.5 rounded-md xl:ml-32 lg:ml-24 md:ml-16 sm:ml-8 ml-8">
-                    <span>Download My CV</span>
-                    </a>
-                </div>
-                <RenderNavButton/>
-            </div>
+        <nav className="px-14 py-5 flex justify-between items-center text-white text-base">
+            <Link href="#" className="flex gap-3 items-center font-bold cursor-pointer">
+                <Image
+                    src="/images/logo.png" alt="dro. logo"
+                    width={40} height={40} 
+                    // sizes="(max-width: 20px) 20px, (max-width: 20px) 20px" 
+                    style={{ objectFit: 'cover' }} priority
+                />
+                DROWNIE.NET
+            </Link>
+
+            <ul className="flex gap-8 px-8 py-3 rounded-3xl font-semibold" style={{backgroundColor: 'rgba(255, 255, 255, 0.5)'}}>
+                {
+                    navbarList.map((navbarItem, i) => (
+                        <li key={i} className="hover:text-orange-700">
+                            <Link href={navbarItem.path} scroll >{navbarItem.title}</Link>
+                        </li>
+                    ))
+                }
+            </ul>
+
+            <Link 
+                href={cvUrl}
+                target="_blank"
+                className="bg-white text-amber-900 flex gap-3 justify-center items-center px-4 py-3 rounded-3xl font-medium"
+            >
+                Open My CV 
+                <span className="text-sm">
+                    <FaExternalLinkAlt />
+                </span>
+            </Link>
         </nav>
     );
 }
